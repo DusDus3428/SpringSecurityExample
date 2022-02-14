@@ -21,3 +21,26 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Compiled output
+/front-end/dist
+/front-end/tmp
+/front-end/out-tsc
+/front-end/bazel-out
+
+# Node
+/front-end/node_modules/
+/front-end/npm-debug.log
+/front-end/yarn-error.log
+
+# Miscellaneous
+/front-end/.angular/cache
+/front-end/.sass-cache/
+/front-end/connect.lock
+/front-end/coverage
+/front-end/libpeerconnection.log
+/front-end/testem.log
+/front-end/typings
+/front-end/.vscode
+
+/.idea
