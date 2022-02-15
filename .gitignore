@@ -23,24 +23,60 @@
 hs_err_pid*
 
 # Compiled output
-/front-end/dist
-/front-end/tmp
-/front-end/out-tsc
-/front-end/bazel-out
+front-end-spring-security-example/dist
+front-end-spring-security-example/tmp
+front-end-spring-security-example/out-tsc
+front-end-spring-security-example/bazel-out
 
 # Node
-/front-end/node_modules/
-/front-end/npm-debug.log
-/front-end/yarn-error.log
+front-end-spring-security-example/node_modules/
+front-end-spring-security-example/npm-debug.log
+front-end-spring-security-example/yarn-error.log
 
 # Miscellaneous
-/front-end/.angular/cache
-/front-end/.sass-cache/
-/front-end/connect.lock
-/front-end/coverage
-/front-end/libpeerconnection.log
-/front-end/testem.log
-/front-end/typings
-/front-end/.vscode
+front-end-spring-security-example/.angular/cache
+front-end-spring-security-example/.sass-cache/
+front-end-spring-security-example/connect.lock
+front-end-spring-security-example/coverage
+front-end-spring-security-example/libpeerconnection.log
+front-end-spring-security-example/testem.log
+front-end-spring-security-example/typings
+front-end-spring-security-example/.vscode
+front-end-spring-security-example/.history/*
+.DS_Store
+Thumbs.db
 
+# IntelliJ IDEA
 /.idea
+*.iws
+*.iml
+*.ipr
+
+# Back End project
+back-end-spring-security-example/HELP.md
+back-end-spring-security-example/target/
+!back-end-spring-security-example/.mvn/wrapper/maven-wrapper.jar
+!back-end-spring-security-example/**/src/main/**/target/
+!back-end-spring-security-example/**/src/test/**/target/
+
+### STS ###
+back-end-spring-security-example/.apt_generated
+back-end-spring-security-example/.classpath
+back-end-spring-security-example/.factorypath
+back-end-spring-security-example/.project
+back-end-spring-security-example/.settings
+back-end-spring-security-example/.springBeans
+back-end-spring-security-example/.sts4-cache
+
+### NetBeans ###
+back-end-spring-security-example/nbproject/private/
+back-end-spring-security-example/nbbuild/
+back-end-spring-security-example/dist/
+back-end-spring-security-example/nbdist/
+back-end-spring-security-example/.nb-gradle/
+back-end-spring-security-example/build/
+!back-end-spring-security-example/**/src/main/**/build/
+!back-end-spring-security-example/**/src/test/**/build/
+
+### VS Code ###
+back-end-spring-security-example/.vscode/
