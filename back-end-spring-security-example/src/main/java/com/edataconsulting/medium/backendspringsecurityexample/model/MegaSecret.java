@@ -3,11 +3,10 @@ package com.edataconsulting.medium.backendspringsecurityexample.model;
 import lombok.Getter;
 
 @Getter
-public class MegaSecret extends Secret{
-    private String megaSecret;
+public class MegaSecret{
+    private String megaSecretText;
 
-    public MegaSecret(String nonSecret, String secret, String megaSecret) {
-        super(nonSecret, secret);
-        this.megaSecret = megaSecret;
+    public MegaSecret(String megaSecretText) {
+        this.megaSecretText = megaSecretText;
     }
 }

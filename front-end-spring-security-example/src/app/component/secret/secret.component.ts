@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NonSecretAndSecretService} from "../../service/non-secret-and-secret.service";
 
 @Component({
   selector: 'app-secret',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecretComponent implements OnInit {
 
-  constructor() { }
+  secretText: string = '';
+
+  constructor(private nonSecretAndSecretService: NonSecretAndSecretService) { }
 
   ngOnInit(): void {
+    this.nonSecretAndSecretService.getSecret().subscribe(secret => this.secretText = secret.secretText)
   }
 
 }

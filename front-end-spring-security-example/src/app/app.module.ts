@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MegaSecretComponent } from './component/mega-secret/mega-secret.component';
 import { SecretComponent } from './component/secret/secret.component';
 import { NonSecretComponent } from './component/non-secret/non-secret.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NonSecretAndSecretService} from './service/non-secret-and-secret.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { NonSecretComponent } from './component/non-secret/non-secret.component'
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [NonSecretAndSecretService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

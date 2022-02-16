@@ -11,14 +11,7 @@ public class NonSecretAndSecretService {
         return new NonSecret("This is a regular text. Nothing secretive about it.");
     }
 
-    public Secret getSecret() {
-        return new Secret("This is a regular text. Nothing secretive about it.",
-                "This is a secret text. It's secret.");
-    }
+    public Secret getSecret() { return new Secret("This is a secret text. It's secret."); }
 
-    public MegaSecret getMegaSecret(){
-        return new MegaSecret("This is a regular text. Nothing secretive about it.",
-                "This is a secret text. It's secret.",
-                "This is a mega secret text. It's very secret.");
-    }
+    public MegaSecret getMegaSecret(){ return new MegaSecret("This is a mega secret text. It's very secret."); }
 }

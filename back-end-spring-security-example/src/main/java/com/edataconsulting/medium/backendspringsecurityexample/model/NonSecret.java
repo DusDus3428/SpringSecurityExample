@@ -4,9 +4,9 @@ import lombok.Getter;
 
 @Getter
 public class NonSecret {
-    private String nonSecret;
+    private String nonSecretText;
 
-    public NonSecret(String nonSecret){
-        this.nonSecret = nonSecret;
+    public NonSecret(String nonSecretText){
+        this.nonSecretText = nonSecretText;
     }
 }

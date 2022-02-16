@@ -1,5 +1,3 @@
-import {SecretModel} from './secret.model';
-
-export interface MegaSecretModel extends SecretModel{
-  megaSecret: string;
+export interface MegaSecretModel {
+  megaSecretText: string;
 }

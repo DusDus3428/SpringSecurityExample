@@ -1,6 +1,8 @@
 package com.edataconsulting.medium.backendspringsecurityexample.controller;
 
+import com.edataconsulting.medium.backendspringsecurityexample.model.MegaSecret;
 import com.edataconsulting.medium.backendspringsecurityexample.model.NonSecret;
+import com.edataconsulting.medium.backendspringsecurityexample.model.Secret;
 import com.edataconsulting.medium.backendspringsecurityexample.service.NonSecretAndSecretService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +20,12 @@ public class NonSecretAndSecretController {
     }
 
     @GetMapping("/secret")
-    public NonSecret getSecret() {
+    public Secret getSecret() {
         return nonSecretAndSecretService.getSecret();
     }
 
     @GetMapping("/megaSecret")
-    public NonSecret getMegaSecret() {
+    public MegaSecret getMegaSecret() {
         return nonSecretAndSecretService.getMegaSecret();
     }
 }
