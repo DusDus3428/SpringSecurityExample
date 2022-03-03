@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SecretComponent } from './secret.component';
+import { QuestionAndAnswerComponent } from './question-and-answer.component';
 
 describe('SecretComponent', () => {
-  let component: SecretComponent;
-  let fixture: ComponentFixture<SecretComponent>;
+  let component: QuestionAndAnswerComponent;
+  let fixture: ComponentFixture<QuestionAndAnswerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SecretComponent ]
+      declarations: [ QuestionAndAnswerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SecretComponent);
+    fixture = TestBed.createComponent(QuestionAndAnswerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

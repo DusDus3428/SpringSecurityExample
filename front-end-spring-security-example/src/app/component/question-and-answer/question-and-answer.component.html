@@ -1,0 +1,14 @@
+<h1>Q&A</h1>
+
+<table>
+  <tr *ngFor="let questionAndAnswer of questionsAndAnswers">
+    <td>
+      {{questionAndAnswer.questionUser}} - {{questionAndAnswer.questionDate}}<br/>
+      {{questionAndAnswer.questionText}}
+    </td>
+    <td>
+      {{questionAndAnswer.answerUser}} - {{questionAndAnswer.answerDate}}<br/>
+      {{questionAndAnswer.answerText}}
+    </td>
+  </tr>
+</table>

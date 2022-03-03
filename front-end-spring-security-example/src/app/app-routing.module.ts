@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {NonSecretComponent} from './component/non-secret/non-secret.component';
-import {SecretComponent} from './component/secret/secret.component';
-import {MegaSecretComponent} from './component/mega-secret/mega-secret.component';
+import {AnnouncementComponent} from './component/announcement/announcement.component';
+import {QuestionAndAnswerComponent} from './component/question-and-answer/question-and-answer.component';
+import {UserComponent} from './component/user/user.component';
 
 const routes: Routes = [
-  { path: 'nonSecret', component: NonSecretComponent},
-  { path: 'secret', component: SecretComponent},
-  { path: 'megaSecret', component: MegaSecretComponent}
+  { path: '', component: AnnouncementComponent},
+  { path: 'questionsAndAnswers', component: QuestionAndAnswerComponent},
+  { path: 'users', component: UserComponent}
 ];
 
 @NgModule({

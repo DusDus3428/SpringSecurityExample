@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NonSecretComponent } from './non-secret.component';
+import { AnnouncementComponent } from './announcement.component';
 
 describe('NonSecretComponent', () => {
-  let component: NonSecretComponent;
-  let fixture: ComponentFixture<NonSecretComponent>;
+  let component: AnnouncementComponent;
+  let fixture: ComponentFixture<AnnouncementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NonSecretComponent ]
+      declarations: [ AnnouncementComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NonSecretComponent);
+    fixture = TestBed.createComponent(AnnouncementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

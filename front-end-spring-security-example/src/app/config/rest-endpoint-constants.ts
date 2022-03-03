@@ -1,5 +1,5 @@
 export abstract class RestEndpointConstants {
-  static readonly NON_SECRET_ENDPOINT: string = "/nonSecret";
-  static readonly SECRET_ENDPOINT: string = "/secret";
-  static readonly MEGA_SECRET_ENDPOINT: string = "/megaSecret";
+  static readonly ANNOUNCEMENT_ENDPOINT: string = "/announcement/";
+  static readonly QUESTION_AND_ANSWER_ENDPOINT: string = "/questionAndAnswer/";
+  static readonly USER_ENDPOINT: string = "/user/";
 }

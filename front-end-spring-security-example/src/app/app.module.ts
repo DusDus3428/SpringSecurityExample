@@ -3,25 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MegaSecretComponent } from './component/mega-secret/mega-secret.component';
-import { SecretComponent } from './component/secret/secret.component';
-import { NonSecretComponent } from './component/non-secret/non-secret.component';
+import { UserComponent } from './component/user/user.component';
+import { QuestionAndAnswerComponent } from './component/question-and-answer/question-and-answer.component';
+import { AnnouncementComponent } from './component/announcement/announcement.component';
 import {HttpClientModule} from '@angular/common/http';
-import {NonSecretAndSecretService} from './service/non-secret-and-secret.service';
+import {AnnouncementService} from './service/announcement.service';
+import {QuestionAndAnswerService} from './service/question-and-answer.service';
+import {UserService} from './service/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MegaSecretComponent,
-    SecretComponent,
-    NonSecretComponent
+    UserComponent,
+    QuestionAndAnswerComponent,
+    AnnouncementComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [NonSecretAndSecretService],
+  providers: [AnnouncementService, QuestionAndAnswerService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

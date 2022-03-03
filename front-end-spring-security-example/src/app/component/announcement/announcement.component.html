@@ -1,0 +1,11 @@
+<h1>Announcements</h1>
+
+<table>
+  <tr *ngFor="let announcement of announcements">
+    <td>
+      {{announcement.announcementHeadline}}<br/>
+      - {{announcement.announcementDate}} -<br/>
+      {{announcement.announcementText}}
+    </td>
+  </tr>
+</table>
