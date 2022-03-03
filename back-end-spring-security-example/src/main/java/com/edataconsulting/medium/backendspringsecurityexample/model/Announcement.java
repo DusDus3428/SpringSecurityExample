@@ -1,7 +1,6 @@
 package com.edataconsulting.medium.backendspringsecurityexample.model;
 
 import lombok.Getter;
-
 import java.util.Date;
 
 @Getter
