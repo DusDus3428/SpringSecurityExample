@@ -1,14 +1,11 @@
-<h1>Q&A</h1>
-
-<table>
-  <tr *ngFor="let questionAndAnswer of questionsAndAnswers">
-    <td>
-      {{questionAndAnswer.questionUser}} - {{questionAndAnswer.questionDate}}<br/>
-      {{questionAndAnswer.questionText}}
-    </td>
-    <td>
-      {{questionAndAnswer.answerUser}} - {{questionAndAnswer.answerDate}}<br/>
-      {{questionAndAnswer.answerText}}
-    </td>
-  </tr>
-</table>
+<div>
+  <h1 class="header">Q&A</h1>
+  <ul class="contentList list-group list-group-flush">
+    <li  class="contentListItem list-group-item text-center" *ngFor="let questionAndAnswer of questionsAndAnswers">
+      <p class="postHeader">Question from {{questionAndAnswer.question.postUser}} on {{questionAndAnswer.question.postDate | date:'MM/dd/yyyy, \'at\' hh:mm:ss a'}}</p>
+      <p>{{questionAndAnswer.question.postText}}</p>
+      <p class="postHeader">Answer from {{questionAndAnswer.answer.postUser}} on {{questionAndAnswer.answer.postDate | date:'MM/dd/yyyy, \'at\' hh:mm:ss a'}}</p>
+      <p>{{questionAndAnswer.answer.postText}}</p>
+    </li>
+  </ul>
+</div>

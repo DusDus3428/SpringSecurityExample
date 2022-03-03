@@ -1,15 +1,26 @@
-<h1>Users</h1>
-
-<table>
-  <tr *ngFor="let user of users">
-    <td>
-      {{user.username}}
-    </td>
-    <td>
-      {{user.email}}
-    </td>
-    <td>
-      {{user.role}}
-    </td>
-  </tr>
-</table>
+<div>
+  <h1 class="header">Users</h1>
+  <div class="contentList">
+    <table class="table table-striped">
+      <thead class="table-dark">
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+      </thead>
+      <tbody>
+      <tr scope="row" *ngFor="let user of users">
+        <td>
+          {{user.username}}
+        </td>
+        <td>
+          {{user.email}}
+        </td>
+        <td>
+          {{user.role}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
