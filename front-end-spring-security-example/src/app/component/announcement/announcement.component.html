@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="(announcements && announcements.length) else missingDataMessage">
   <h1 class="header">Announcements</h1>
   <ul class="contentList list-group list-group-flush">
     <li  class="contentListItem list-group-item text-center" *ngFor="let announcement of announcements">
@@ -8,3 +8,6 @@
     </li>
   </ul>
 </div>
+<ng-template #missingDataMessage>
+  <p class="missingDataMessage">Warning: Unable to fetch announcements.</p>
+</ng-template>
