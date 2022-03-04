@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="(questionsAndAnswers && questionsAndAnswers.length) else missingDataMessage">
   <h1 class="header">Q&A</h1>
   <ul class="contentList list-group list-group-flush">
     <li  class="contentListItem list-group-item text-center" *ngFor="let questionAndAnswer of questionsAndAnswers">
@@ -9,3 +9,6 @@
     </li>
   </ul>
 </div>
+<ng-template #missingDataMessage>
+  <p class="missingDataMessage">Warning: Unable to fetch questions and answers.</p>
+</ng-template>

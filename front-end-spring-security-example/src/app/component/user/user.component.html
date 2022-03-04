@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="(users && users.length) else missingDataMessage">
   <h1 class="header">Users</h1>
   <div class="contentList">
     <table class="table table-striped">
@@ -24,3 +24,6 @@
     </table>
   </div>
 </div>
+<ng-template #missingDataMessage>
+  <p class="missingDataMessage">Warning: Unable to fetch users.</p>
+</ng-template>

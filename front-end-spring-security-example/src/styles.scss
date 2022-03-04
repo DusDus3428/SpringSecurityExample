@@ -18,3 +18,9 @@
 .contentListItem {
   margin-bottom: 20px;
 }
+
+.missingDataMessage {
+  color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+  font-weight: bold;
+  text-align: center;
+}
