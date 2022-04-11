@@ -1,8 +1,6 @@
+import {Post} from './post';
+
 export interface QuestionAndAnswer {
-  questionText: string;
-  questionDate: Date;
-  questionUser: string;
-  answerText: string;
-  answerDate: Date;
-  answerUser: string;
+  question: Post;
+  answer: Post;
 }

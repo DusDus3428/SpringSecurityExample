@@ -13,7 +13,7 @@ import java.util.List;
 public class AnnouncementService {
     public List<Announcement> getAnnouncements() {
         Instant now = Instant.now();
-        return new ArrayList<Announcement>() {{
+        return new ArrayList<>() {{
             add(new Announcement("Important Announcement!", "We are going to fly to Mars.", Date.from(now)));
             add(new Announcement("Important Announcement!", "We are going to fly to the moon.", Date.from(now.minus(1, ChronoUnit.DAYS))));
             add(new Announcement("Important Announcement!", "We are going to fly to space.", Date.from(now.minus(2, ChronoUnit.DAYS))));

@@ -1,11 +1,13 @@
-<h1>Announcements</h1>
-
-<table>
-  <tr *ngFor="let announcement of announcements">
-    <td>
-      {{announcement.announcementHeadline}}<br/>
-      - {{announcement.announcementDate}} -<br/>
-      {{announcement.announcementText}}
-    </td>
-  </tr>
-</table>
+<div *ngIf="(announcements && announcements.length) else missingDataMessage">
+  <h1 class="header">Announcements</h1>
+  <ul class="contentList list-group list-group-flush">
+    <li  class="contentListItem list-group-item text-center" *ngFor="let announcement of announcements">
+      <h4 class="header">{{announcement.announcementHeadline}}</h4>
+      <h6>- {{announcement.announcementDate | date:'MM/dd/yyyy, hh:mm:ss a'}} -</h6><br/>
+      <p>{{announcement.announcementText}}</p>
+    </li>
+  </ul>
+</div>
+<ng-template #missingDataMessage>
+  <p class="missingDataMessage">Warning: Unable to fetch announcements.</p>
+</ng-template>

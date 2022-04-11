@@ -1,7 +1,15 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/">Home</a><br/>
-  <a routerLink="/questionsAndAnswers">Q&A</a><br/>
-  <a routerLink="/users">Users</a><br/>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="navigationBarTitle navbar-brand">{{title}}</div>
+  <a class="nav-tabs navigationBarLink" routerLink="/">Home</a>
+  <a class="nav-tabs navigationBarLink" routerLink="/questionsAndAnswers">Q&A</a>
+  <a class="nav-tabs navigationBarLink" routerLink="/users">Users</a>
+  <div class="authButtons">
+    <a *ngIf="true else logoutButton" class="nav-tabs navigationBarLink" routerLink="/login">Login</a>
+    <ng-template #logoutButton>
+      <a class="nav-tabs navigationBarLink" (click)="logout()">Logout</a>
+    </ng-template>
+  </div>
 </nav>
-<router-outlet></router-outlet>
+<div class="componentContent">
+  <router-outlet></router-outlet>
+</div>
