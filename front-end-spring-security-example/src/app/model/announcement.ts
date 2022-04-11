@@ -1,5 +1,5 @@
 export interface Announcement {
-  announcementHeadline: string;
-  announcementText: string;
-  announcementDate: Date;
+  headline: string;
+  text: string;
+  date: Date;
 }

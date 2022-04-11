@@ -5,13 +5,13 @@ import java.util.Date;
 
 @Getter
 public class Post {
-    private String postText;
-    private Date postDate;
-    private String postUser;
+    private String text;
+    private Date date;
+    private String user;
 
-    public Post(String postText, Date postDate, String postUser){
-        this.postText = postText;
-        this.postDate = postDate;
-        this.postUser = postUser;
+    public Post(String text, Date date, String user){
+        this.text = text;
+        this.date = date;
+        this.user = user;
     }
 }

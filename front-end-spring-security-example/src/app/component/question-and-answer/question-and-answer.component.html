@@ -2,10 +2,10 @@
   <h1 class="header">Q&A</h1>
   <ul class="contentList list-group list-group-flush">
     <li  class="contentListItem list-group-item text-center" *ngFor="let questionAndAnswer of questionsAndAnswers">
-      <p class="postHeader">Question from {{questionAndAnswer.question.postUser}} on {{questionAndAnswer.question.postDate | date:'MM/dd/yyyy, \'at\' hh:mm:ss a'}}</p>
-      <p>{{questionAndAnswer.question.postText}}</p>
-      <p class="postHeader">Answer from {{questionAndAnswer.answer.postUser}} on {{questionAndAnswer.answer.postDate | date:'MM/dd/yyyy, \'at\' hh:mm:ss a'}}</p>
-      <p>{{questionAndAnswer.answer.postText}}</p>
+      <p class="postHeader">Question from {{questionAndAnswer.question.user}} on {{questionAndAnswer.question.date | date:'MM/dd/yyyy, \'at\' hh:mm:ss a'}}</p>
+      <p>{{questionAndAnswer.question.text}}</p>
+      <p class="postHeader">Answer from {{questionAndAnswer.answer.user}} on {{questionAndAnswer.answer.date | date:'MM/dd/yyyy, \'at\' hh:mm:ss a'}}</p>
+      <p>{{questionAndAnswer.answer.text}}</p>
     </li>
   </ul>
 </div>
