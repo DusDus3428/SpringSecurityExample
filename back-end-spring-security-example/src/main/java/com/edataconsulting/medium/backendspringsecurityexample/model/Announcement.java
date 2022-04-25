@@ -5,13 +5,13 @@ import java.util.Date;
 
 @Getter
 public class Announcement {
-    private String announcementHeadline;
-    private String announcementText;
-    private Date announcementDate;
+    private String headline;
+    private String text;
+    private Date date;
 
-    public Announcement(String announcementHeadline, String announcementText, Date announcementDate){
-        this.announcementHeadline = announcementHeadline;
-        this.announcementText = announcementText;
-        this.announcementDate = announcementDate;
+    public Announcement(String headline, String text, Date date){
+        this.headline = headline;
+        this.text = text;
+        this.date = date;
     }
 }
