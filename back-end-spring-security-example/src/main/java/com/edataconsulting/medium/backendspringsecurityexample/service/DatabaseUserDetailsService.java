@@ -1,7 +1,6 @@
 package com.edataconsulting.medium.backendspringsecurityexample.service;
 
 import com.edataconsulting.medium.backendspringsecurityexample.entity.RegisteredUser;
-import com.edataconsulting.medium.backendspringsecurityexample.model.RegisteredUserDetails;
 import com.edataconsulting.medium.backendspringsecurityexample.repository.RegisteredUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("userDetailsService")
 public class DatabaseUserDetailsService implements UserDetailsService {
     @Autowired
     private RegisteredUserRepository registeredUserRepository;
@@ -22,6 +21,6 @@ public class DatabaseUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("The user with the username " + username + " is not a registered user.");
         }
 
-        return new RegisteredUserDetails(registeredUser.getUsername(), registeredUser.getPassword());
+        return registeredUser;
     }
 }

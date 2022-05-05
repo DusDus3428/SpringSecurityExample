@@ -3,10 +3,11 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {RestEndpointConstants} from '../config/rest-endpoint-constants';
 import {AuthenticationCredentials} from "../model/authentication-credentials";
+import {User} from "../model/user";
 
 @Injectable()
 export class AuthenticationService {
-  authenticated: boolean = false;
+  authenticatedUser: User;
 
   constructor(private http: HttpClient) {
   }
