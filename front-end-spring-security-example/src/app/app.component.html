@@ -4,7 +4,7 @@
   <a class="nav-tabs navigationBarLink" routerLink="/questionsAndAnswers">Q&A</a>
   <a class="nav-tabs navigationBarLink" routerLink="/users">Users</a>
   <div class="authButtons">
-    <a *ngIf="true else logoutButton" class="nav-tabs navigationBarLink" routerLink="/login">Login</a>
+    <a *ngIf="!userAuthenticated else logoutButton" class="nav-tabs navigationBarLink" routerLink="/login">Login</a>
     <ng-template #logoutButton>
       <a class="nav-tabs navigationBarLink" (click)="logout()">Logout</a>
     </ng-template>

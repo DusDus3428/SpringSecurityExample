@@ -7,8 +7,14 @@ import {AuthenticationService} from './service/authentication.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Space Travels Fan Page';
+  title: string = 'Space Travels Fan Page';
+
+  userAuthenticated: boolean = false;
 
   constructor(private authenticationService: AuthenticationService) {
+  }
+
+  logout() {
+
   }
 }

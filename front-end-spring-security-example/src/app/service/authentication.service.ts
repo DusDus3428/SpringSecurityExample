@@ -2,22 +2,27 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {RestEndpointConstants} from '../config/rest-endpoint-constants';
+import {AuthenticationCredentials} from "../model/authentication-credentials";
 
 @Injectable()
 export class AuthenticationService {
-  readonly USER_NAME: string = "sessionUser";
+  authenticated: boolean = false;
 
   constructor(private http: HttpClient) {
   }
 
-  public login(username: string, password: string) {
-    const headers = new HttpHeaders((username && password) ? {
-      authorization: 'Basic' + btoa(username + ':' + password)
+  public login(credentials: AuthenticationCredentials) {
+    const headers = new HttpHeaders((credentials.username && credentials.password) ? {
+      authorization: 'Basic' + btoa(credentials.username + ':' + credentials.password)
     }: {});
 
     this.http.get(environment.backEndUrl.concat(RestEndpointConstants.LOGIN_ENDPOINT), {headers: headers})
       .subscribe(response => {
-        sessionStorage.setItem(this.USER_NAME, response.username);
+        if (response['name']) {
+          this.authenticated = true;
+        } else {
+          this.authenticated = false;
+        }
       });
   }
 
