@@ -1,15 +1,25 @@
 package com.edataconsulting.medium.backendspringsecurityexample.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.edataconsulting.medium.backendspringsecurityexample.entity.RegisteredUser;
+import com.edataconsulting.medium.backendspringsecurityexample.model.AuthenticationCredentials;
+import com.edataconsulting.medium.backendspringsecurityexample.service.RegisteredUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("auth")
+@RequestMapping("/login")
 public class AuthenticationController {
-    @PostMapping("/login")
-    public String login() {
-        return "Yay!";
+    @Autowired
+    RegisteredUserService registeredUserService;
+
+    @PostMapping("/")
+    public AuthenticationCredentials login(@RequestBody AuthenticationCredentials authenticationCredentials) {
+        RegisteredUser registeredUser = (RegisteredUser) this.registeredUserService.loadUserByUsername(authenticationCredentials.getUsername());
+
+        if (registeredUser == null) {
+            registeredUser = null;
+        }
+
+        return new AuthenticationCredentials(registeredUser.getUsername(), registeredUser.getPassword());
     }
 }

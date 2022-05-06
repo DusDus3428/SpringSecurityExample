@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {AuthenticationService} from './service/authentication.service';
+import {Router} from "@angular/router";
+import {AuthenticationCredentials} from "./model/authentication-credentials";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +10,13 @@ import {AuthenticationService} from './service/authentication.service';
 })
 export class AppComponent {
   title: string = 'Space Travels Fan Page';
-
-  userAuthenticated: boolean = false;
+  authenticatedUser: AuthenticationCredentials;
 
   constructor(private authenticationService: AuthenticationService) {
+    this.authenticationService.authenticatedUserAsObservable.subscribe(authenticatedUser => this.authenticatedUser = authenticatedUser);
   }
 
   logout() {
-
+    this.authenticationService.logout();
   }
 }

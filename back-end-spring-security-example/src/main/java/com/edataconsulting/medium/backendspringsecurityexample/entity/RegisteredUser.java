@@ -31,15 +31,9 @@ public class RegisteredUser implements UserDetails {
         return Collections.singleton(role);
     }
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
-    }
+    //
+    // The other methods will not be discussed in the article
+    //
 
     @Override
     public boolean isAccountNonExpired() {
