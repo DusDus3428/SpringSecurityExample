@@ -17,17 +17,10 @@ export class AuthenticationService {
     this.authenticatedUserAsObservable = this.authenticatedUser.asObservable();
   }
 
-  public getAuthenticatedUser() {
-    return this.authenticatedUser.value;
-  }
-
   public login(credentials: AuthenticationCredentials) {
     return this.http.post<AuthenticationCredentials>(environment.backEndUrl.concat(RestEndpointConstants.LOGIN_ENDPOINT), {username: credentials.username, password: credentials.password})
       .pipe(map(response => {
-        console.log(response)
-
         if (response.username) {
-          console.log('There')
           localStorage.setItem('user', JSON.stringify(credentials));
           this.authenticatedUser.next(credentials);
         }
@@ -38,5 +31,9 @@ export class AuthenticationService {
     localStorage.removeItem('user');
     this.authenticatedUser.next(null);
     this.router.navigateByUrl('/login')
+  }
+
+  public getAuthenticatedUser() {
+    return this.authenticatedUser.value;
   }
 }

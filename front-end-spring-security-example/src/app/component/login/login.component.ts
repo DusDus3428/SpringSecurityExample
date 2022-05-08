@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from "../../service/authentication.service";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
@@ -17,13 +17,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.credentials = this.formBuilder.group({
-      username: '',
-      password: ''
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
 
   login() {
-    this.authenticationService.login({username: this.credentials.get('username')?.value, password: this.credentials.get('password')?.value})
+    this.authenticationService.login({username: this.credentials.get('username').value, password: this.credentials.get('password').value})
       .subscribe(response => {
         this.router.navigateByUrl('')
       });

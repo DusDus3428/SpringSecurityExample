@@ -10,9 +10,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const user = this.authenticationService.getAuthenticatedUser();
-    console.log(user)
     if (user) {
-      console.log('Bang')
       request = request.clone({
         setHeaders: {
           Authorization: 'Basic ' + btoa(user.username + ':' + user.password)

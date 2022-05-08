@@ -18,7 +18,7 @@ public class RegisteredUserService implements UserDetailsService {
         RegisteredUser registeredUser = this.registeredUserRepository.findByUsername(username);
 
         if (registeredUser == null) {
-            throw new UsernameNotFoundException("The user with the username " + username + " is not a registered user.");
+            throw new UsernameNotFoundException("The user " + username + " is not a registered user.");
         }
 
         return registeredUser;

@@ -32,7 +32,7 @@ public class RegisteredUser implements UserDetails {
     }
 
     //
-    // The other methods will not be discussed in the article
+    // The following methods will not be discussed in the article
     //
 
     @Override

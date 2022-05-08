@@ -17,9 +17,9 @@ public class AuthenticationController {
         RegisteredUser registeredUser = (RegisteredUser) this.registeredUserService.loadUserByUsername(authenticationCredentials.getUsername());
 
         if (registeredUser == null) {
-            registeredUser = null;
+            authenticationCredentials = null;
         }
 
-        return new AuthenticationCredentials(registeredUser.getUsername(), registeredUser.getPassword());
+        return authenticationCredentials;
     }
 }
