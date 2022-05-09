@@ -23,6 +23,7 @@ export class AuthenticationService {
         if (response.username) {
           localStorage.setItem('user', JSON.stringify(credentials));
           this.authenticatedUser.next(credentials);
+          this.router.navigateByUrl('')
         }
       }));
   }

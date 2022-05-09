@@ -10,22 +10,24 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   credentials: FormGroup;
+  showAuthenticationErrorMessage: boolean = false;
 
   constructor(private authenticationService: AuthenticationService,
-              private formBuilder: FormBuilder,
-              private router: Router) { }
+              private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.credentials = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: '',
+      password: ''
     })
   }
 
   login() {
     this.authenticationService.login({username: this.credentials.get('username').value, password: this.credentials.get('password').value})
-      .subscribe(response => {
-        this.router.navigateByUrl('')
-      });
+      .subscribe({
+        error: error => {
+          this.showAuthenticationErrorMessage = true;
+        }
+      })
   }
 }

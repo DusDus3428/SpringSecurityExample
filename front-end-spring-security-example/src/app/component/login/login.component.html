@@ -15,4 +15,8 @@
       <button class="col-2 button" type="submit">Login</button>
     </div>
   </form>
+  <br/>
+  <div *ngIf="showAuthenticationErrorMessage">
+    <p class="warningMessage">Warning: Authentication failed. Wrong username and/or password was used.</p>
+  </div>
 </div>

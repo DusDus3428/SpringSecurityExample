@@ -6,7 +6,7 @@
   <div class="authButtons">
     <a *ngIf="!authenticatedUser else logoutButton" class="nav-tabs navigationBarLink" routerLink="/login">Login</a>
     <ng-template #logoutButton>
-      <a class="nav-tabs navigationBarLink" (click)="logout()">Logout</a>
+      <a class="nav-tabs navigationBarLink" (click)="logout()">Logout <b>{{authenticatedUser.username}}</b></a>
     </ng-template>
   </div>
 </nav>
