@@ -11,6 +11,6 @@ export class QuestionAndAnswerService {
   }
 
   public getQuestionsAndAnswers(): Observable<any> {
-    return this.http.get(environment.backEndUrl.concat(RestEndpointConstants.QUESTION_AND_ANSWER_ENDPOINT), {observe: 'body', responseType: 'json'})
+    return this.http.get(environment.backEndUrl.concat(RestEndpointConstants.QUESTION_AND_ANSWER_ENDPOINT), {observe: 'response', responseType: 'json'})
   }
 }

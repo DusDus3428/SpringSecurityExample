@@ -13,8 +13,9 @@ import {UserService} from './service/user.service';
 import {DatePipe} from '@angular/common';
 import { LoginComponent } from './component/login/login.component';
 import {AuthenticationService} from './service/authentication.service';
-import {ReactiveFormsModule} from "@angular/forms";
-import {HttpRequestInterceptor} from "./helpers/http-request-interceptor";
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpRequestInterceptor} from './helpers/http-request-interceptor';
+import { MissingDataMessageComponent } from './component/missing-data-message/missing-data-message.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpRequestInterceptor} from "./helpers/http-request-interceptor";
     UserComponent,
     QuestionAndAnswerComponent,
     AnnouncementComponent,
-    LoginComponent
+    LoginComponent,
+    MissingDataMessageComponent
   ],
   imports: [
     BrowserModule,

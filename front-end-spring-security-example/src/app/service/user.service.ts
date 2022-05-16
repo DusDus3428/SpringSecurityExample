@@ -11,6 +11,6 @@ export class UserService {
   }
 
   public getUsers(): Observable<any> {
-    return this.http.get(environment.backEndUrl.concat(RestEndpointConstants.USER_ENDPOINT), {observe: 'body', responseType: 'json'});
+    return this.http.get(environment.backEndUrl.concat(RestEndpointConstants.USER_ENDPOINT), {observe: 'response', responseType: 'json'});
   }
 }

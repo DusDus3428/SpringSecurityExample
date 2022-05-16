@@ -11,6 +11,6 @@ export class AnnouncementService {
   }
 
   public getAnnouncements(): Observable<any> {
-    return this.httpClient.get(environment.backEndUrl.concat(RestEndpointConstants.ANNOUNCEMENT_ENDPOINT), {observe: 'body', responseType: 'json'})
+    return this.httpClient.get(environment.backEndUrl.concat(RestEndpointConstants.ANNOUNCEMENT_ENDPOINT), {observe: 'response', responseType: 'json'})
   }
 }
