@@ -34,6 +34,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/announcement/", "/login/", "/h2-console/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
+            .headers().frameOptions().sameOrigin()
+                .and()
             .csrf().disable();
     }
 
