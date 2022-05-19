@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../../service/authentication.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {UserFeedbackMessageEnum} from "../../helpers/user-feedback-message.enum";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   credentials: FormGroup;
-  showAuthenticationErrorMessage: boolean = false;
+  userFeedbackMessage: string;
+  errorOccurred: boolean = false;
 
   constructor(private authenticationService: AuthenticationService,
               private formBuilder: FormBuilder) { }
@@ -25,7 +27,8 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login({username: this.credentials.get('username').value, password: this.credentials.get('password').value})
       .subscribe({
         error: error => {
-          this.showAuthenticationErrorMessage = true;
+          this.userFeedbackMessage = UserFeedbackMessageEnum.ERROR_UNKNOWN_CREDENTIALS;
+          this.errorOccurred = true;
         }
       })
   }

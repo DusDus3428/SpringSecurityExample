@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {QuestionAndAnswer} from '../../model/question-and-answer';
 import {QuestionAndAnswerService} from '../../service/question-and-answer.service';
-import {MissingDataMessageReasonEnum} from '../../helpers/missing-data-message-reason.enum';
+import {UserFeedbackMessageEnum} from '../../helpers/user-feedback-message.enum';
 
 @Component({
   selector: 'app-question-and-answer',
@@ -11,7 +11,8 @@ import {MissingDataMessageReasonEnum} from '../../helpers/missing-data-message-r
 export class QuestionAndAnswerComponent implements OnInit {
 
   questionsAndAnswers: QuestionAndAnswer[] = [];
-  missingDataMessageReason: string;
+  userFeedbackMessage: string = UserFeedbackMessageEnum.INFO_DATA_BEING_FETCHED_MESSAGE;
+  errorOccurred: boolean = false;
 
   constructor(private questionAndAnswerService: QuestionAndAnswerService) { }
 
@@ -23,12 +24,13 @@ export class QuestionAndAnswerComponent implements OnInit {
       error: (error) => {
         switch (error.status) {
           case 401:
-            this.missingDataMessageReason = MissingDataMessageReasonEnum.USER_UNAUTHENTICATED;
+            this.userFeedbackMessage = UserFeedbackMessageEnum.ERROR_USER_UNAUTHENTICATED_MESSAGE;
             break;
           default:
-            this.missingDataMessageReason = MissingDataMessageReasonEnum.NO_DATA_FETCHED;
+            this.userFeedbackMessage = UserFeedbackMessageEnum.ERROR_NO_DATA_FETCHED_MESSAGE;
             break;
         }
+        this.errorOccurred = true;
       }
     });
   }

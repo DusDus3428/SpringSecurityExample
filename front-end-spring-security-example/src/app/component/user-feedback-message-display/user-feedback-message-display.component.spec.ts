@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MissingDataMessageComponent } from './missing-data-message.component';
+import { UserFeedbackMessageDisplayComponent } from './user-feedback-message-display.component';
 
 describe('MissingDataMessageComponent', () => {
-  let component: MissingDataMessageComponent;
-  let fixture: ComponentFixture<MissingDataMessageComponent>;
+  let component: UserFeedbackMessageDisplayComponent;
+  let fixture: ComponentFixture<UserFeedbackMessageDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MissingDataMessageComponent ]
+      declarations: [ UserFeedbackMessageDisplayComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MissingDataMessageComponent);
+    fixture = TestBed.createComponent(UserFeedbackMessageDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

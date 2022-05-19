@@ -10,5 +10,5 @@
   </ul>
 </div>
 <ng-template #missingDataMessage>
-  <app-missing-data-message [missingDataMessageReason]="missingDataMessageReason"></app-missing-data-message>
+  <app-user-feedback-message-display [userFeedbackMessage]="userFeedbackMessage" [isErrorMessage]="errorOccurred"></app-user-feedback-message-display>
 </ng-template>

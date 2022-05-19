@@ -1,0 +1,6 @@
+<div>
+  <p class="userFeedbackMessage" [ngClass]="{
+    'infoMessage': !isErrorMessage,
+    'errorMessage': isErrorMessage
+  }">{{userFeedbackMessage}}</p>
+</div>

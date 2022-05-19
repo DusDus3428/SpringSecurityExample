@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AnnouncementService} from '../../service/announcement.service';
 import {Announcement} from '../../model/announcement';
-import {MissingDataMessageReasonEnum} from '../../helpers/missing-data-message-reason.enum';
+import {UserFeedbackMessageEnum} from '../../helpers/user-feedback-message.enum';
 
 @Component({
   selector: 'app-announcement',
@@ -11,9 +11,13 @@ import {MissingDataMessageReasonEnum} from '../../helpers/missing-data-message-r
 export class AnnouncementComponent implements OnInit {
 
   announcements: Announcement[] = [];
-  missingDataMessageReason: string;
+  userFeedbackMessage: string = UserFeedbackMessageEnum.INFO_DATA_BEING_FETCHED_MESSAGE;
+  errorOccurred: boolean = false;
 
-  constructor(private announcementService: AnnouncementService) { }
+  constructor(private announcementService: AnnouncementService) {
+    if (this.announcements && this.announcements.length)
+      this.userFeedbackMessage = UserFeedbackMessageEnum.INFO_DATA_BEING_FETCHED_MESSAGE;
+  }
 
   ngOnInit(): void {
     this.announcementService.getAnnouncements().subscribe({
@@ -21,7 +25,8 @@ export class AnnouncementComponent implements OnInit {
         this.announcements = announcements.body;
       },
       error: (error) => {
-        this.missingDataMessageReason = MissingDataMessageReasonEnum.NO_DATA_FETCHED;
+        this.userFeedbackMessage = UserFeedbackMessageEnum.ERROR_NO_DATA_FETCHED_MESSAGE;
+        this.errorOccurred = true;
       }
     });
   }

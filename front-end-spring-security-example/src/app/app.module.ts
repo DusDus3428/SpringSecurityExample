@@ -15,7 +15,7 @@ import { LoginComponent } from './component/login/login.component';
 import {AuthenticationService} from './service/authentication.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpRequestInterceptor} from './helpers/http-request-interceptor';
-import { MissingDataMessageComponent } from './component/missing-data-message/missing-data-message.component';
+import { UserFeedbackMessageDisplayComponent } from './component/user-feedback-message-display/user-feedback-message-display.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { MissingDataMessageComponent } from './component/missing-data-message/mi
     QuestionAndAnswerComponent,
     AnnouncementComponent,
     LoginComponent,
-    MissingDataMessageComponent
+    UserFeedbackMessageDisplayComponent
   ],
   imports: [
     BrowserModule,

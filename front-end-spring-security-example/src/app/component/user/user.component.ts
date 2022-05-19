@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../service/user.service';
 import {User} from '../../model/user';
-import {MissingDataMessageReasonEnum} from '../../helpers/missing-data-message-reason.enum';
+import {UserFeedbackMessageEnum} from '../../helpers/user-feedback-message.enum';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +11,8 @@ import {MissingDataMessageReasonEnum} from '../../helpers/missing-data-message-r
 export class UserComponent implements OnInit {
 
   users: User[] = [];
-  missingDataMessageReason: string;
+  userFeedbackMessage: string = UserFeedbackMessageEnum.INFO_DATA_BEING_FETCHED_MESSAGE;
+  errorOccurred: boolean = false;
 
   constructor(private userService: UserService) { }
 
@@ -23,15 +24,16 @@ export class UserComponent implements OnInit {
       error: (error) => {
         switch (error.status) {
           case 401:
-            this.missingDataMessageReason = MissingDataMessageReasonEnum.USER_UNAUTHENTICATED;
+            this.userFeedbackMessage = UserFeedbackMessageEnum.ERROR_USER_UNAUTHENTICATED_MESSAGE;
             break;
           case 403:
-            this.missingDataMessageReason = MissingDataMessageReasonEnum.USER_UNAUTHORIZED;
+            this.userFeedbackMessage = UserFeedbackMessageEnum.ERROR_USER_UNAUTHORIZED_MESSAGE;
             break;
           default:
-            this.missingDataMessageReason = MissingDataMessageReasonEnum.NO_DATA_FETCHED;
+            this.userFeedbackMessage = UserFeedbackMessageEnum.ERROR_NO_DATA_FETCHED_MESSAGE;
             break;
         }
+        this.errorOccurred = true;
       }
     });
   }

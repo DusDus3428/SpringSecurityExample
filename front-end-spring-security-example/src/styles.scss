@@ -26,14 +26,15 @@
   margin-bottom: 20px;
 }
 
-.warningMessage {
-  color: red!important;
+.userFeedbackMessage {
   font-weight: bold;
   text-align: center;
 }
 
-.loadingMessage {
+.infoMessage {
   color: black!important;
-  font-weight: bold;
-  text-align: center;
+}
+
+.errorMessage {
+  color: red!important;
 }

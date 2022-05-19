@@ -16,7 +16,7 @@
     </div>
   </form>
   <br/>
-  <div *ngIf="showAuthenticationErrorMessage">
-    <p class="warningMessage">Warning: Authentication failed. Wrong username and/or password was used.</p>
+  <div *ngIf="errorOccurred">
+    <app-user-feedback-message-display [userFeedbackMessage]="userFeedbackMessage" [isErrorMessage]="errorOccurred"></app-user-feedback-message-display>
   </div>
 </div>
