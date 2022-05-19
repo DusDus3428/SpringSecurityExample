@@ -1,6 +1,8 @@
 # SpringSecurityExample
 
-This is an example project to demonstrate how to secure your Spring Boot web application using Spring Security. It was created for a Medium article I wrote, and you can check it out [here](https://medium.com/edataconsulting/how-to-secure-your-web-application-part-i-creating-a-web-app-with-spring-boot-and-angular-50d5e9e2fe96) for more detailed information on it.
+This is an example project to demonstrate how to secure your Spring Boot web application using Spring Security. It was created for two Medium articles I wrote, and you can check them out here:
+* [How to Secure Your Web Application Part I: Creating a Web App With Spring Boot And Angular](https://medium.com/edataconsulting/how-to-secure-your-web-application-part-i-creating-a-web-app-with-spring-boot-and-angular-50d5e9e2fe96)
+* [How to Secure Your Web Application Part II: Securing Your Web Application With Spring Security](https://medium.com/edataconsulting/how-to-secure-your-web-application-part-ii-securing-your-web-application-with-spring-security-5a876e2b5b76)
 
 ## Prerequisites
 * [OpenJDK 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/what-is-corretto-11.html)
